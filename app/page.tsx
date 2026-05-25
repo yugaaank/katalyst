@@ -13,8 +13,6 @@ import {
   Zap, 
   Shield, 
   Layers,
-  Search,
-  Plus,
   Video,
   MousePointer2,
   Megaphone,
@@ -44,19 +42,7 @@ export default function Home() {
     <div className="min-h-screen bg-brand-grey text-white selection:bg-brand-purple/30 overflow-x-hidden">
       <Navbar />
 
-      {/* Left Sidebar */}
-      <aside className="fixed left-0 top-0 h-screen w-16 border-r border-white/5 flex flex-col items-center py-8 gap-4 z-50 bg-brand-grey/50 backdrop-blur-md hidden md:flex">
-         <div className="text-neutral-500 hover:text-white cursor-pointer transition-colors"><Search size={10} /></div>
-         <div className="text-neutral-500 hover:text-white cursor-pointer transition-colors mt-auto"><Plus size={10} /></div>
-         <div className="text-neutral-500 hover:text-white cursor-pointer transition-colors"><div className="w-4 h-4 border-2 border-current rounded-none"></div></div>
-         <div className="text-neutral-500 hover:text-white cursor-pointer transition-colors"><div className="w-4 h-4 bg-gradient-to-tr from-yellow-400 to-brand-purple rounded-none"></div></div>
-         <div className="text-neutral-500 hover:text-white cursor-pointer transition-colors"><div className="w-5 h-5 bg-neutral-800 rounded-none"></div></div>
-         <div className="w-10 h-6 bg-white/5 border border-white/10 rounded-none flex items-center justify-center text-white cursor-pointer hover:bg-white/10 transition-all">
-            <Zap size={10} />
-         </div>
-      </aside>
-      
-      <section className="relative min-h-screen flex items-center pt-24 overflow-hidden md:pl-16">
+      <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-40 opacity-30" fill="#BF40FA" />
         
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
@@ -142,12 +128,6 @@ export default function Home() {
                </div>
             </div>
           </div>
-        </div>
-
-        {/* Floating Sidebar Link */}
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-4 text-neutral-600">
-           <div className="w-px h-20 bg-neutral-800 mx-auto"></div>
-           <span className="rotate-90 origin-left translate-x-4 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">FOLLOW US</span>
         </div>
 
         {/* Bottom Right Floating Button */}
