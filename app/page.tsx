@@ -45,7 +45,13 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-40 opacity-30" fill="#BF40FA" />
         
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10"
+        >
           <div className="text-left">
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-px bg-neutral-700"></div>
@@ -128,7 +134,7 @@ export default function Home() {
                </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Right Floating Button */}
         <div className="absolute bottom-10 right-10 z-50">
@@ -150,7 +156,13 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="border-y border-white/5 bg-background-dark">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5"
+        >
           <div className="p-8 md:p-6 flex flex-col gap-4">
             <span className="text-[10px] font-black tracking-[0.2em] text-brand-yellow uppercase">
               {"// WORLDWIDE CLIENTS"}
@@ -189,12 +201,18 @@ export default function Home() {
               CLIENT RETENTION
             </span>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Services Section */}
       <section className="py-12 px-6 bg-brand-grey">
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
             <div className="flex flex-col gap-2">
               <span className="text-[8px] font-black tracking-[0.2em] text-brand-yellow uppercase">
@@ -212,8 +230,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((service, i) => (
-              <div 
+              <motion.div 
                 key={i}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="group relative bg-white/[0.02] border border-white/5 rounded-none p-6 flex flex-col items-start transition-all duration-500 hover:border-brand-purple/60 hover:bg-brand-purple/[0.06] hover:shadow-[0_0_80px_rgba(168,85,247,0.25)]"
               >
                 {/* Primary Large Ambient Glow */}
@@ -241,74 +263,87 @@ export default function Home() {
                 <button className="text-[8px] font-black tracking-[0.2em] text-neutral-400 group-hover:text-brand-yellow uppercase flex items-center gap-2 transition-colors">
                   EXPLORE <span className="text-lg">→</span>
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Product Showcase Section */}
       <section className="relative bg-background-dark py-10">
-        <ContainerScroll
-          titleComponent={
-            <>
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                The Dashboard of the <br />
-                <span className="text-4xl md:text-5xl font-bold mt-1 text-brand-yellow">
-                  Future
-                </span>
-              </h2>
-            </>
-          }
+        <motion.div
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="w-full h-full bg-neutral-900 rounded-none border border-white/10 overflow-hidden relative group">
-             {/* Mock Dashboard UI */}
-             <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-transparent"></div>
-             <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-none bg-brand-yellow/50"></div>
-                    <div className="w-3 h-3 rounded-none bg-yellow-500/50"></div>
-                    <div className="w-3 h-3 rounded-none bg-green-500/50"></div>
+          <ContainerScroll
+            titleComponent={
+              <>
+                <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                  The Dashboard of the <br />
+                  <span className="text-4xl md:text-5xl font-bold mt-1 text-brand-yellow">
+                    Future
+                  </span>
+                </h2>
+              </>
+            }
+          >
+            <div className="w-full h-full bg-neutral-900 rounded-none border border-white/10 overflow-hidden relative group">
+               {/* Mock Dashboard UI */}
+               <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-transparent"></div>
+               <div className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-none bg-brand-yellow/50"></div>
+                      <div className="w-3 h-3 rounded-none bg-yellow-500/50"></div>
+                      <div className="w-3 h-3 rounded-none bg-green-500/50"></div>
+                    </div>
+                    <div className="h-8 w-64 bg-white/5 rounded-none border border-white/10"></div>
                   </div>
-                  <div className="h-8 w-64 bg-white/5 rounded-none border border-white/10"></div>
-                </div>
-                <div className="grid grid-cols-3 gap-6">
-                  <div className="col-span-2 space-y-6">
-                    <div className="h-48 bg-white/5 rounded-none border border-white/10 p-6">
-                      <div className="flex justify-between items-center mb-4">
-                         <div className="w-32 h-4 bg-white/10 rounded"></div>
-                         <div className="w-12 h-8 bg-brand-purple/20 rounded-none"></div>
+                  <div className="grid grid-cols-3 gap-6">
+                    <div className="col-span-2 space-y-6">
+                      <div className="h-48 bg-white/5 rounded-none border border-white/10 p-6">
+                        <div className="flex justify-between items-center mb-4">
+                           <div className="w-32 h-4 bg-white/10 rounded"></div>
+                           <div className="w-12 h-8 bg-brand-purple/20 rounded-none"></div>
+                        </div>
+                        <div className="w-full h-24 bg-gradient-to-t from-brand-purple/10 to-transparent rounded-none border-b border-brand-purple/30"></div>
                       </div>
-                      <div className="w-full h-24 bg-gradient-to-t from-brand-purple/10 to-transparent rounded-none border-b border-brand-purple/30"></div>
+                      <div className="grid grid-cols-2 gap-6">
+                         <div className="h-32 bg-white/5 rounded-none border border-white/10"></div>
+                         <div className="h-32 bg-white/5 rounded-none border border-white/10"></div>
+                      </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-6">
-                       <div className="h-32 bg-white/5 rounded-none border border-white/10"></div>
-                       <div className="h-32 bg-white/5 rounded-none border border-white/10"></div>
+                    <div className="space-y-6">
+                      <div className="h-full bg-white/5 rounded-none border border-white/10 p-6">
+                         <div className="space-y-4">
+                            <div className="w-full h-4 bg-white/10 rounded"></div>
+                            <div className="w-2/3 h-4 bg-white/10 rounded"></div>
+                            <div className="w-full h-4 bg-white/10 rounded"></div>
+                            <div className="w-1/2 h-4 bg-white/10 rounded"></div>
+                         </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="space-y-6">
-                    <div className="h-full bg-white/5 rounded-none border border-white/10 p-6">
-                       <div className="space-y-4">
-                          <div className="w-full h-4 bg-white/10 rounded"></div>
-                          <div className="w-2/3 h-4 bg-white/10 rounded"></div>
-                          <div className="w-full h-4 bg-white/10 rounded"></div>
-                          <div className="w-1/2 h-4 bg-white/10 rounded"></div>
-                       </div>
-                    </div>
-                  </div>
-                </div>
-             </div>
-             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-brand-grey/40 backdrop-blur-sm">
-                <button className="bg-brand-purple text-white px-6 py-2 rounded-none font-bold">Preview Application</button>
-             </div>
-          </div>
-        </ContainerScroll>
+               </div>
+               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-brand-grey/40 backdrop-blur-sm">
+                  <button className="bg-brand-purple text-white px-6 py-2 rounded-none font-bold">Preview Application</button>
+               </div>
+            </div>
+          </ContainerScroll>
+        </motion.div>
       </section>
 
       {/* Video Showcase Section */}
       <section className="py-12 px-6 bg-brand-grey">
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
           <div className="flex flex-col gap-4 mb-4">
             <span className="text-[10px] font-black tracking-[0.2em] text-brand-yellow uppercase">
               {"// LAUNCH VIDEOS"}
@@ -398,34 +433,48 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Features Bento Grid */}
       <section className="py-12 px-6 bg-background-dark">
-        <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 uppercase tracking-tighter">Built for Scale</h2>
-          <p className="text-neutral-500 text-[10px] max-w-xl mx-auto uppercase tracking-widest">
-            Everything you need to ship world-class software.
-          </p>
-        </div>
-        <BentoGrid>
-          {features.map((feature, i) => (
-            <BentoGridItem
-              key={i}
-              title={feature.title}
-              description={feature.description}
-              header={feature.header}
-              className={feature.className}
-              icon={<feature.icon className="h-4 w-4 text-brand-purple" />}
-            />
-          ))}
-        </BentoGrid>
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="max-w-7xl mx-auto text-center mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 uppercase tracking-tighter">Built for Scale</h2>
+            <p className="text-neutral-500 text-[10px] max-w-xl mx-auto uppercase tracking-widest">
+              Everything you need to ship world-class software.
+            </p>
+          </div>
+          <BentoGrid>
+            {features.map((feature, i) => (
+              <BentoGridItem
+                key={i}
+                title={feature.title}
+                description={feature.description}
+                header={feature.header}
+                className={feature.className}
+                icon={<feature.icon className="h-4 w-4 text-brand-purple" />}
+              />
+            ))}
+          </BentoGrid>
+        </motion.div>
       </section>
 
       {/* Testimonials (Social Proof) Section */}
       <section className="py-12 px-6 bg-brand-grey">
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="flex flex-col gap-3">
               <span className="text-[9px] font-black tracking-[0.2em] text-brand-yellow uppercase">
@@ -443,8 +492,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-white/5 border border-white/5 rounded-none overflow-hidden">
             {socialProof.map((post, i) => (
-              <div 
+              <motion.div 
                 key={i}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="bg-brand-grey p-8 flex flex-col gap-5 hover:bg-white/[0.02] transition-colors group"
               >
                 <div className="flex justify-between items-start">
@@ -480,15 +533,21 @@ export default function Home() {
                   </div>
                   <span className="text-neutral-700 text-[10px] font-black ml-auto">{post.time}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Success Stories Section */}
       <section className="py-12 px-6 bg-background-dark">
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
           <div className="flex flex-col items-center text-center mb-16 gap-3">
             <span className="text-[9px] font-black tracking-[0.2em] text-brand-yellow uppercase">
               {"// REAL RESULTS"}
@@ -501,8 +560,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {caseStudies.map((study, i) => (
-              <div 
+              <motion.div 
                 key={i}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="bg-white/[0.02] border border-white/5 rounded-none p-8 flex flex-col gap-8 hover:border-brand-purple/30 transition-all group"
               >
                 <div className="flex justify-between items-start">
@@ -547,7 +610,7 @@ export default function Home() {
                   </p>
                   <span className="text-[8px] font-black tracking-[0.2em] text-white uppercase">{study.founder}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -556,12 +619,18 @@ export default function Home() {
                 Get Similar Results for Your Company
              </button>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Trust Section */}
       <section className="py-24 px-6 bg-brand-grey">
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
           <div className="flex flex-col items-center text-center mb-16 gap-3">
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">
               Built on <span className="text-brand-yellow">Trust</span>
@@ -601,12 +670,18 @@ export default function Home() {
                </div>
              ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Packages Section */}
       <section className="py-12 px-6 bg-brand-grey">
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
           <div className="flex flex-col items-center text-center mb-16 gap-3">
             <span className="text-[9px] font-black tracking-[0.2em] text-brand-yellow uppercase">
               {"// OUR PACKAGES"}
@@ -619,8 +694,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {packages.map((pkg, i) => (
-              <div 
+              <motion.div 
                 key={i}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className={cn(
                   "relative bg-white/[0.02] border rounded-none p-8 flex flex-col gap-6 transition-all group",
                   pkg.featured ? "border-brand-purple/50 purple-glow scale-105 z-10 bg-brand-purple/[0.02]" : "border-white/5"
@@ -667,15 +746,21 @@ export default function Home() {
                 )}>
                   Get Quote
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-12 px-6 bg-background-dark">
-        <div className="max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl mx-auto"
+        >
           <div className="flex flex-col items-center text-center mb-16 gap-3">
             <span className="text-[9px] font-black tracking-[0.2em] text-brand-yellow uppercase">
               {"// FREQUENTLY ASKED QUESTIONS"}
@@ -732,12 +817,18 @@ export default function Home() {
                 Book a Free Discovery Call
              </button>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Contact Form Section */}
       <section className="py-12 px-6 bg-brand-grey">
-        <div className="max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl mx-auto"
+        >
           <div className="flex flex-col items-center text-center mb-10 gap-3">
             <span className="text-[8px] font-black tracking-[0.2em] text-brand-yellow uppercase">
               {"// GET YOUR CUSTOM QUOTE"}
@@ -831,12 +922,18 @@ export default function Home() {
                </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Booking Section */}
       <section className="py-12 px-6 bg-background-dark">
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 100, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto"
+        >
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="flex flex-col gap-4">
               <span className="text-[10px] font-black tracking-[0.2em] text-brand-yellow uppercase">
@@ -916,7 +1013,7 @@ export default function Home() {
                   </div>
                </div>
             </div>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />
