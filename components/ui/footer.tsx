@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center font-bold text-white">
+            <div className="w-8 h-8 bg-purple-600 rounded-none flex items-center justify-center font-bold text-white">
               K
             </div>
             <span className="text-xl font-bold tracking-tight">KATALYST</span>
@@ -43,9 +43,9 @@ export const Footer = () => {
             <input 
               type="email" 
               placeholder="Email" 
-              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-purple-500"
+              className="bg-white/5 border border-white/10 rounded-none px-4 py-2 text-sm w-full focus:outline-none focus:border-purple-500"
             />
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-none text-sm font-medium transition-colors">
               Join
             </button>
           </div>

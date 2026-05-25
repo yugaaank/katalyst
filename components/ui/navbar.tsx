@@ -19,7 +19,7 @@ export const Navbar = () => {
         duration: 0.2,
       }}
       className={cn(
-        "flex max-w-fit fixed top-6 inset-x-0 mx-auto border border-white/[0.1] rounded-full bg-black/50 backdrop-blur-2xl z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-12"
+        "flex max-w-fit fixed top-6 inset-x-0 mx-auto border border-white/[0.1] rounded-none bg-black/50 backdrop-blur-2xl z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-12"
       )}
     >
       <div className="flex items-center">
@@ -35,7 +35,7 @@ export const Navbar = () => {
         <Link href="#" className="hover:text-white transition-colors">FAQ</Link>
       </div>
 
-      <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-full text-[9px] font-black tracking-[0.1em] uppercase transition-all purple-glow border border-white/10">
+      <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-none text-[9px] font-black tracking-[0.1em] uppercase transition-all purple-glow border border-white/10">
         Get Quote
       </button>
     </motion.div>
