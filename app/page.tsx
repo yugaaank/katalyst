@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "@/components/ui/spotlight";
@@ -10,7 +11,6 @@ import { Footer } from "@/components/ui/footer";
 import { 
   Cpu, 
   Globe, 
-  Zap, 
   Shield, 
   Layers,
   Video,
@@ -137,7 +137,7 @@ export default function Home() {
         </motion.div>
 
         {/* Bottom Right Floating Button */}
-        <div className="absolute bottom-10 right-10 z-50">
+        <Link href="#booking" className="absolute bottom-10 right-10 z-50">
            <div className="relative group cursor-pointer">
               <div className="absolute inset-0 bg-brand-purple rounded-none blur-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative w-16 h-16 bg-brand-grey border border-white/10 rounded-none flex items-center justify-center overflow-hidden">
@@ -151,7 +151,7 @@ export default function Home() {
                  </div>
               </div>
            </div>
-        </div>
+        </Link>
       </section>
 
       {/* Stats Section */}
@@ -205,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 px-6 bg-brand-grey">
+      <section id="services" className="py-12 px-6 bg-brand-grey">
         <motion.div 
           initial={{ opacity: 0, y: 100, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -336,7 +336,7 @@ export default function Home() {
       </section>
 
       {/* Video Showcase Section */}
-      <section className="py-12 px-6 bg-brand-grey">
+      <section id="portfolio" className="py-12 px-6 bg-brand-grey">
         <motion.div 
           initial={{ opacity: 0, y: 100, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -615,9 +615,9 @@ export default function Home() {
           </div>
 
           <div className="mt-16 flex justify-center">
-             <button className="bg-brand-purple hover:bg-purple-700 text-white px-8 py-4 rounded-none text-[10px] font-black tracking-[0.1em] transition-all purple-glow uppercase">
+             <Link href="#contact" className="bg-brand-purple hover:bg-purple-700 text-white px-8 py-4 rounded-none text-[10px] font-black tracking-[0.1em] transition-all purple-glow uppercase">
                 Get Similar Results for Your Company
-             </button>
+             </Link>
           </div>
         </motion.div>
       </section>
@@ -674,7 +674,7 @@ export default function Home() {
       </section>
 
       {/* Packages Section */}
-      <section className="py-12 px-6 bg-brand-grey">
+      <section id="packages" className="py-12 px-6 bg-brand-grey">
         <motion.div 
           initial={{ opacity: 0, y: 100, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -753,7 +753,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 px-6 bg-background-dark">
+      <section id="faq" className="py-12 px-6 bg-background-dark">
         <motion.div 
           initial={{ opacity: 0, y: 100, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -821,7 +821,7 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-12 px-6 bg-brand-grey">
+      <section id="contact" className="py-12 px-6 bg-brand-grey">
         <motion.div 
           initial={{ opacity: 0, y: 100, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -926,7 +926,7 @@ export default function Home() {
       </section>
 
       {/* Booking Section */}
-      <section className="py-12 px-6 bg-background-dark">
+      <section id="booking" className="py-12 px-6 bg-background-dark">
         <motion.div 
           initial={{ opacity: 0, y: 100, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -1356,3 +1356,6 @@ const faqs = [
     answer: "We offer a 'Love it or Redo it' guarantee. If you're still unsatisfied after revisions, we offer a 50% refund on UI animations.",
   },
 ];
+
+
+

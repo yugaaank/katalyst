@@ -59,6 +59,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+html {
+  scroll-padding-top: 100px;
+}
+
 /* Lenis Smooth Scroll */
 html.lenis,
 html.lenis body {
